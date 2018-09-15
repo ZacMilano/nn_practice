@@ -22,3 +22,16 @@ X = np.array([[0,0], [0,1], [1,0], [1,1]])
 
 # Desired outputs of XOR gate for each input in X
 y = np.array([[0],   [1],   [1],   [0]])
+
+# Model is computationally simple, so a large number of epochs isn't too costly
+epochs = 50000
+
+# Input is two binary variables
+input_size = 2
+# Size of the single hidden layer; article cited above
+hidden_size = 3
+# Output is one binary variable
+output_size = 1
+
+# Step size in gradient descent
+Learning_rate = 0.1
