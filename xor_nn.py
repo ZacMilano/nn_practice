@@ -18,7 +18,7 @@ def sigmoid_derivative(x):
   return (sigmoid(x) * (1 - sigmoid(x)))
 
 # Inputs to the XOR gate
-X = np.array([[0,0], [0,1], [1,0], [1,1]])
+x = np.array([[0,0], [0,1], [1,0], [1,1]])
 
 # Desired outputs of XOR gate for each input in X
 y_expected = np.array([[0],   [1],   [1],   [0]])
@@ -35,7 +35,7 @@ hidden_size = 3
 output_size = 1
 
 # Step size in gradient descent
-Learning_rate = 0.1
+learning_rate = 0.1
 
 # Initialize weight matrices between each connected layer with random values
 # W1 is weights between input layer and hidden layer
@@ -45,6 +45,8 @@ W2 = np.random.uniform(size=(hidden_size, output_size))
 
 # Activation values of hidden layer; perhaps analogous to a part of a thought
 # process in a literal brain
-A1 = sigmoid(np.dot(X, W1))
+a1 = sigmoid(np.dot(X, W1))
 # Activation values of output layer, i.e. what the model produces
 y_produced = sigmoid(np.dot(A1, W2))
+
+error = y_produced - y_expected
