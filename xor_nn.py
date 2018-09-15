@@ -21,12 +21,13 @@ def sigmoid_derivative(x):
 X = np.array([[0,0], [0,1], [1,0], [1,1]])
 
 # Desired outputs of XOR gate for each input in X
-y = np.array([[0],   [1],   [1],   [0]])
+y_expected = np.array([[0],   [1],   [1],   [0]])
 
 # Model is computationally simple, so a large number of epochs isn't too costly
 epochs = 50000
 
-# Input is two binary variables
+# Input is two binary variables; input space is all possible combinations of
+# two binary variables, or X (defined above)
 input_size = 2
 # Size of the single hidden layer; article cited above
 hidden_size = 3
@@ -41,3 +42,9 @@ Learning_rate = 0.1
 W1 = np.random.uniform(size=(input_size, hidden_size))
 # W2 is weights between hidden layer and output layer
 W2 = np.random.uniform(size=(hidden_size, output_size))
+
+# Activation values of hidden layer; perhaps analogous to a part of a thought
+# process in a literal brain
+A1 = sigmoid(np.dot(X, W1))
+# Activation values of output layer, i.e. what the model produces
+y_produced = sigmoid(np.dot(A1, W2))
