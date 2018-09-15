@@ -35,3 +35,9 @@ output_size = 1
 
 # Step size in gradient descent
 Learning_rate = 0.1
+
+# Initialize weight matrices between each connected layer with random values
+# W1 is weights between input layer and hidden layer
+W1 = np.random.uniform(size=(input_size, hidden_size))
+# W2 is weights between hidden layer and output layer
+W2 = np.random.uniform(size=(hidden_size, output_size))
